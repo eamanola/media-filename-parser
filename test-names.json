@@ -200,8 +200,13 @@
     "episodeInfo": { "episode": 1 }
   },
   {
-    "filename": "[SubsPlease] Kimetsu no Yaiba - Hashira Geiko-hen - 05 (1080p) [C09018C7].mkv ",
+    "filename": "[SubsPlease] Kimetsu no Yaiba - Hashira Geiko-hen - 05 (1080p) [C09018C7].mkv",
     "season": -1,
     "episodeInfo": { "episode": 5 }
+  },
+  {
+    "filename": "[SubsPlease] Mushoku Tensei S2 - 21 (1080p) [FC6AD092].mkv",
+    "season": 2,
+    "episodeInfo": { "episode": 21 }
   }
 ]

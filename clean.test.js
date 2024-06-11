@@ -24,7 +24,7 @@ describe('clean', () => {
   let filenames = null;
 
   beforeAll(() => {
-    filenames = fs.readFileSync('./randomnames', 'utf8').split(/\n/);
+    filenames = JSON.parse(fs.readFileSync('./test-names.json', 'utf8'));
   });
 
   /*
@@ -39,44 +39,44 @@ describe('clean', () => {
 
   it('should remove size info', () => {
     const before = filenames
-      .some((filename) => sizeInfo.test(filename));
+      .some(({ filename }) => sizeInfo.test(filename));
     expect(before).toBe(true);
 
     const after = filenames
-      .map((filename) => clean(filename))
+      .map(({ filename }) => clean(filename))
       .some((filename) => sizeInfo.test(filename));
     expect(after).toBe(false);
   });
 
   it('should remove source info', () => {
     const before = filenames
-      .some((filename) => sourceInfo.test(filename));
+      .some(({ filename }) => sourceInfo.test(filename));
     expect(before).toBe(true);
 
     const after = filenames
-      .map((filename) => clean(filename))
+      .map(({ filename }) => clean(filename))
       .some((filename) => sourceInfo.test(filename));
     expect(after).toBe(false);
   });
 
   it('should remove file size info', () => {
     const before = filenames
-      .some((filename) => fileSizeInfo.test(filename));
+      .some(({ filename }) => fileSizeInfo.test(filename));
     expect(before).toBe(true);
 
     const after = filenames
-      .map((filename) => clean(filename))
+      .map(({ filename }) => clean(filename))
       .some((filename) => fileSizeInfo.test(filename));
     expect(after).toBe(false);
   });
 
   it('should remove codec info', () => {
     const before = filenames
-      .some((filename) => codecsInfo.test(filename));
+      .some(({ filename }) => codecsInfo.test(filename));
     expect(before).toBe(true);
 
     const after = filenames
-      .map((filename) => clean(filename))
+      .map(({ filename }) => clean(filename))
       .some((filename) => codecsInfo.test(filename));
     expect(after).toBe(false);
   });

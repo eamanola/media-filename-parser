@@ -5,7 +5,7 @@ describe('season', () => {
   let testnames = null;
 
   beforeAll(() => {
-    testnames = JSON.parse(fs.readFileSync('./testnames.json', 'utf8'));
+    testnames = JSON.parse(fs.readFileSync('./test-names.json', 'utf8'));
   });
 
   it('should determine season', () => {

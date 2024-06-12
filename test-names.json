@@ -15,8 +15,7 @@
   },
   {
     "filename": "[df68] One Piece Season 09 - Part 3 [1080p][x264][JPN][SUB]/One Piece - 311 - Everyone Makes a Great Escape! The Road to Victory is for the Pirates! [1080p][x264][AAC][Eng-Sub]-df68.mkv",
-    "name": "One Piece - Part 3",
-    "comment": "part x removal from name unsupported",
+    "name": "One Piece",
     "season": 9,
     "episodeInfo": { "wildGuess": 311 },
     "year": -1
@@ -122,15 +121,14 @@
   },
   {
     "filename": "Pets.United.2020.720p.WEBRip.800MB.x264-GalaxyRG[TGx]/Pets.United.2020.720p.WEBRip.800MB.x264-GalaxyRG.mkv",
-    "name": "Pets United -GalaxyRG",
-    "comment": "unmarked tag removal from name unsupported",
+    "name": "Pets United",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2020
   },
   {
     "filename": "[Hakata Ramen] JoJo no Kimyou na Bouken (JoJo's Bizarre Adventure) - Seasons 1-5/[Hakata Ramen] JoJo S3 (Stardust Crusaders P2)/[Hakata Ramen] JoJo3 - 10.mkv",
-    "name": "JoJo no Kimyou na Bouken - Seasons 1-5",
+    "name": "JoJo no Kimyou na Bouken",
     "season": 3,
     "episodeInfo": { "wildGuess": 10 },
     "year": -1
@@ -179,8 +177,7 @@
   },
   {
     "filename": "Chernobyl.COMPLETE.Season.1.S01.1080p.AMZN.WEB-DL.x265-HETeam/Chernobyl.S01E05.Vichnaya.Pamyat.1080p.AMZN.WEB-DL.x265-HETeam.mkv",
-    "name": "Chernobyl COMPLETE Season 1 AMZN -HETeam",
-    "comment": "unmarked tag removal from name unsupported",
+    "name": "Chernobyl COMPLETE Season 1",
     "season": 1,
     "episodeInfo": { "episode": 5 },
     "year": -1
@@ -278,8 +275,7 @@
   },
   {
     "filename": "NieR Automata Ver1.1a S01 1080p Dual Audio WEBRip DD+ x265-EMBER/S01E01-or not to [B]e [268B933B].mkv",
-    "name": "NieR Automata Ver1 1a DD+ -EMBER",
-    "comment": "unmarked tag removal from name unsupported",
+    "name": "NieR Automata Ver1 1a",
     "season": 1,
     "episodeInfo": { "episode": 1 },
     "year": -1
@@ -294,8 +290,7 @@
   },
   {
     "filename": "[SubsPlease] Mushoku Tensei S2 - 21 (1080p) [FC6AD092].mkv",
-    "name": "Mushoku Tensei - 21",
-    "comment": "wildguess removal from name unsupported",
+    "name": "Mushoku Tensei",
     "season": 2,
     "episodeInfo": { "wildGuess": 21 },
     "year": -1
@@ -305,6 +300,20 @@
     "name": "Tiger and Bunny - 01 ~ 25",
     "season": -1,
     "episodeInfo": { "wildGuess": 5 },
+    "year": -1
+  },
+  {
+    "filename": "Delicious.in.Dungeon.S01E23.1080p.DSNP.WEB-DL.DDP5.1.H.264-VARYG.mkv",
+    "name": "Delicious in Dungeon",
+    "season": 1,
+    "episodeInfo": { "episode": 23 },
+    "year": -1
+  },
+  {
+    "filename": "[SubsPlease] Kono Subarashii Sekai ni Shukufuku wo! S3 - 07 (1080p) [7E6E9718].mkv",
+    "name": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "season": 3,
+    "episodeInfo": { "wildGuess": 7 },
     "year": -1
   }
 ]

@@ -315,5 +315,19 @@
     "season": 3,
     "episodeInfo": { "wildGuess": 7 },
     "year": -1
+  },
+  {
+    "filename": "Kimetsu.no.Yaiba.S05E05.1080p.UNEXT.WEB-DL.JPN.AAC2.0.H.264-ToonsHub.mkv",
+    "name": "Kimetsu no Yaiba",
+    "season": 5,
+    "episodeInfo": { "episode": 5 },
+    "year": -1
+  },
+  {
+    "filename": "[SubsPlease] Spice and Wolf (2024) - 09 (1080p) [2647222D].mkv",
+    "name": "Spice and Wolf",
+    "season": -1,
+    "episodeInfo": { "wildGuess": 9 },
+    "year": 2024
   }
 ]

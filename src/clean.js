@@ -39,6 +39,16 @@ const removeSource = (filename) => {
   return dlRemoved;
 };
 
+const removeKeywords = (filename) => {
+  const keywords = [
+    'Dual Audio',
+  ];
+
+  const keywordsRemoved = filename.replace(new RegExp(keywords.join('|'), 'gi'), '');
+
+  return keywordsRemoved;
+};
+
 const removeFileSize = (filename) => {
   const fileSizeRemoved = filename.replace(/\d+mb/gi, '');
 
@@ -79,7 +89,9 @@ const clean = (filename) => {
 
   const codecsRemoved = removeCodecs(fileSizeRemoved);
 
-  return codecsRemoved;
+  const keywordsRemoved = removeKeywords(codecsRemoved);
+
+  return keywordsRemoved;
 };
 
 export default clean;

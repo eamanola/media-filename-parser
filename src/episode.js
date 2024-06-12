@@ -3,14 +3,7 @@ import clean from './clean';
 
 const EPISODE_UNKNOWN = -1;
 
-const matchReg = (filenamePart, re) => {
-  const m = filenamePart.match(re);
-  if (m) {
-    return Number(m[1]);
-  }
-
-  return EPISODE_UNKNOWN;
-};
+const matchReg = (filenamePart, re) => filenamePart.match(re);
 
 const extras = (filenamePart, label) => {
   const re = new RegExp(`(?:^|\\s+)${label}\\s*(\\d+)`, 'i');
@@ -38,41 +31,49 @@ const implicitNaming = (filenamePart) => {
   return matchReg(filenamePart, re);
 };
 
+const match = (filenamePart) => {
+  let m = explicitNaming(filenamePart);
+  if (m) {
+    return { episode: Number(m[1]), match: m };
+  }
+
+  m = ncop(filenamePart);
+  if (m) {
+    return { episode: EPISODE_UNKNOWN, ncop: Number(m[1]), match: m };
+  }
+
+  m = nced(filenamePart);
+  if (m) {
+    return { episode: EPISODE_UNKNOWN, nced: Number(m[1]), match: m };
+  }
+
+  m = extra(filenamePart);
+  if (m) {
+    return { episode: EPISODE_UNKNOWN, extra: Number(m[1]), match: m };
+  }
+
+  m = oad(filenamePart);
+  if (m) {
+    return { episode: EPISODE_UNKNOWN, oad: Number(m[1]), match: m };
+  }
+
+  m = implicitNaming(filenamePart);
+  if (m) {
+    if (Number(m[1]) < 1900) {
+      return { episode: EPISODE_UNKNOWN, wildGuess: Number(m[1]), match: m };
+    }
+  }
+
+  return { match: null };
+};
+
 const episode = (filename) => {
   const parts = clean(filename).split(path.sep).reverse();
-  let ep = EPISODE_UNKNOWN;
 
   for (let i = 0, il = parts.length; i < il; i += 1) {
-    ep = explicitNaming(parts[i]);
-    if (ep !== EPISODE_UNKNOWN) {
-      return { episode: ep };
-    }
-
-    ep = ncop(parts[i]);
-    if (ep !== EPISODE_UNKNOWN) {
-      return { episode: EPISODE_UNKNOWN, ncop: ep };
-    }
-
-    ep = nced(parts[i]);
-    if (ep !== EPISODE_UNKNOWN) {
-      return { episode: EPISODE_UNKNOWN, nced: ep };
-    }
-
-    ep = extra(parts[i]);
-    if (ep !== EPISODE_UNKNOWN) {
-      return { episode: EPISODE_UNKNOWN, extra: ep };
-    }
-
-    ep = oad(parts[i]);
-    if (ep !== EPISODE_UNKNOWN) {
-      return { episode: EPISODE_UNKNOWN, oad: ep };
-    }
-
-    ep = implicitNaming(parts[i]);
-    if (ep !== EPISODE_UNKNOWN) {
-      if (ep < 1900) {
-        return { episode: ep };
-      }
+    const { match: m, ...rest } = match(parts[i]);
+    if (m) {
+      return { ...rest };
     }
   }
 
@@ -80,6 +81,7 @@ const episode = (filename) => {
 };
 
 export {
+  match,
   EPISODE_UNKNOWN,
 };
 

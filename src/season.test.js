@@ -10,7 +10,11 @@ describe('season', () => {
 
   it('should determine season', () => {
     testnames.forEach(({ filename, season: s }) => {
+      // try {
       expect(season(filename)).toBe(s);
+      // } catch (err) {
+      //   console.log(filename, season(filename))
+      // }
     });
   });
 });

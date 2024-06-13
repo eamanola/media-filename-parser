@@ -8,7 +8,10 @@ const year = (filename) => {
   const m = match(filename);
 
   if (m) {
-    return Number(m[1]);
+    const y = Number(m[1]);
+    if (y > 1900) {
+      return y;
+    }
   }
 
   return YEAR_UNKNOWN;

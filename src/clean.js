@@ -1,102 +1,68 @@
-const removeExtension = (filename, { replacement }) => {
-  const extensions = [
-    'mkv',
-    'mp4',
-    'avi',
-    'm4v',
-    'srt',
-    'ass',
-  ];
+const replaceExtension = (filename, replacement) => filename
+  .replace(/\.(?:mkv|mp4|avi|m4v|srt|ass)$/, replacement);
 
-  const extensionRemoved = filename.replace(new RegExp(`\\.${extensions.join('|')}$`), replacement);
+const replaceTags = (filename, replacement) => filename
+  .replace(/\[[^\]]+\]/gi, replacement);
 
-  return extensionRemoved;
-};
+const replaceMeta = (filename, replacement) => filename
+  .replace(/\([^)]+\)/gi, replacement);
 
-const removeTags = (filename, { replacement }) => {
-  const tagsRemoved = filename.replace(/\[[^\]]+\]/gi, replacement);
+const replaceRes = (filename, replacement) => filename
+  .replace(/(?:720|1080)p/gi, replacement);
 
-  return tagsRemoved;
-};
+const replaceSource = (filename, replacement) => filename
+  .replace(/(?:hd|web|bd)rip/gi, replacement)
+  .replace(/web-dl/gi, replacement)
+  .replace(/bluray/gi, replacement);
 
-const removeMeta = (filename, { replacement }) => {
-  const metaRemoved = filename.replace(/\([^)]+\)/gi, replacement);
+const replaceFileSize = (filename, replacement) => filename
+  .replace(/\d+mb/gi, replacement);
 
-  return metaRemoved;
-};
-
-const removeSize = (filename, { replacement }) => {
-  const sizeRemoved = filename.replace(/(?:720|1080)p/gi, replacement);
-
-  return sizeRemoved;
-};
-
-const removeSource = (filename, { replacement }) => {
-  const ripRemoved = filename.replace(/(?:hd|web|bd)rip/gi, replacement);
-
-  const dlRemoved = ripRemoved.replace(/web-dl/gi, replacement);
-
-  return dlRemoved;
-};
-
-const removeFileSize = (filename, { replacement }) => {
-  const fileSizeRemoved = filename.replace(/\d+mb/gi, replacement);
-
-  return fileSizeRemoved;
-};
+const replaceCodecs = (filename, replacement) => filename
+  .replace(/x264|x265|hevc|xvid|aac5.1|aac|ac3\.evo|ac3|flac/ig, replacement);
 
 // Questionable
-const removeKeywords = (filename, { replacement }) => {
-  const keywords = [
-    /Dual Audio/ig,
-    /part \d+/ig,
-  ];
+// const replaceKeywords = (filename, replacement) => {
+//   const keywords = [
+//     /Dual Audio/ig,
+//   ];
 
-  const keywordsRemoved = keywords.reduce(
-    (currentValue, keyword) => currentValue.replace(keyword, replacement),
-    filename,
-  );
+//   const keywordsReplaced = keywords.reduce(
+//     (currentValue, keyword) => currentValue.replace(keyword, replacement),
+//     filename,
+//   );
 
-  return keywordsRemoved;
-};
+//   return keywordsReplaced;
+// };
 
-const removeCodecs = (filename, { replacement }) => {
-  const codecs = [
-    'x264',
-    'x265',
-    'hevc',
-    'xvid',
-    'aac5.1',
-    'aac',
-    'ac3.evo',
-    'ac3',
-    'flac',
-    'bluray',
-  ];
+const replacePart = (filename, replacement) => filename
+  .replace(/part \d+/ig, replacement);
 
-  const codecsRemoved = filename.replace(new RegExp(codecs.join('|'), 'gi'), replacement);
-
-  return codecsRemoved;
-};
+const trimSpecialChars = (filename, replacement) => filename
+  .replace(/^[^a-zA-Z0-9]*/, replacement)
+  .replace(/[^a-zA-Z0-9]*$/, replacement);
 
 const clean = (filename, { replacement = '' } = {}) => {
-  const extensionRemoved = removeExtension(filename, { replacement });
+  const extensionReplaced = replaceExtension(filename, replacement);
 
-  const tagsRemoved = removeTags(extensionRemoved, { replacement });
+  const tagsReplaced = replaceTags(extensionReplaced, replacement);
 
-  const metaRemoved = removeMeta(tagsRemoved, { replacement });
+  const metaReplaced = replaceMeta(tagsReplaced, replacement);
 
-  const sizeRemoved = removeSize(metaRemoved, { replacement });
+  const sizeReplaced = replaceRes(metaReplaced, replacement);
 
-  const sourceRemoved = removeSource(sizeRemoved, { replacement });
+  const sourceReplaced = replaceSource(sizeReplaced, replacement);
 
-  const fileSizeRemoved = removeFileSize(sourceRemoved, { replacement });
+  const fileSizeReplaced = replaceFileSize(sourceReplaced, replacement);
 
-  const codecsRemoved = removeCodecs(fileSizeRemoved, { replacement });
+  const codecsReplaced = replaceCodecs(fileSizeReplaced, replacement);
 
-  const keywordsRemoved = removeKeywords(codecsRemoved, { replacement });
+  return codecsReplaced;
+};
 
-  return keywordsRemoved;
+export {
+  replacePart,
+  trimSpecialChars,
 };
 
 export default clean;

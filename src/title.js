@@ -1,5 +1,5 @@
 import path from 'path';
-import clean from './clean';
+import clean, { trimSpecialChars } from './clean';
 import { match as matchSeason } from './season';
 import { match as matchEpisode } from './episode';
 import { match as matchYear } from './year';
@@ -39,23 +39,15 @@ const removeYear = (filename) => {
 
 const replaceDots = (filename) => filename.replace(/\./g, replacement);
 
-const trimSpecialChars = (filename) => filename
-  .trim()
-  .replace(/^[^a-zA-Z0-9]/, replacement)
-  .replace(/[^a-zA-Z0-9]$/, replacement)
-  .trim();
-
 const name = (filename) => {
-  const [cleaned] = clean(filename, { replacement }).split(path.sep);
+  const cleaned = clean(filename.split(path.sep)[0], { replacement });
 
   const seasonRemoved = removeSeason(cleaned);
   const episodeRemoved = removeEpisode(seasonRemoved);
   const yearRemoved = removeYear(episodeRemoved);
 
   const dotsReplaced = replaceDots(yearRemoved);
-
-  const trimmed = trimSpecialChars(dotsReplaced);
-
+  const trimmed = trimSpecialChars(dotsReplaced, replacement).trim();
   return trimmed.split(`${replacement}${replacement}`)[0] || TITLE_UNKNOWN;
 };
 

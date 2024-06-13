@@ -1,72 +1,52 @@
 import path from 'path';
-import clean from './clean';
+import clean, { replacePart } from './clean';
 
 const EPISODE_UNKNOWN = -1;
 
 const matchReg = (filenamePart, re) => filenamePart.match(re);
 
-const extras = (filenamePart, label) => {
-  const re = new RegExp(`(?:^|\\s+)${label}\\s*(\\d+)(?:\\s*v\\s*(\\d+))?`, 'i');
-
-  return matchReg(filenamePart, re);
-};
-
 const explicitNaming = (filenamePart) => {
-  const re = /(?:^|[^a-zA-Z])(?:e|ep|episode)(?:\.|\s*)(\d+)(?:\s*v\s*(\d+))?/i;
+  const re = /(?:^|[^a-zA-Z])(e|ep|episode|ncop|nced|extra|oad)(?:\.|\s*)(\d+)(?:\s*v\s*(\d+))?/i;
 
   return matchReg(filenamePart, re);
 };
-
-const ncop = (filenamePart) => extras(filenamePart, 'ncop');
-
-const nced = (filenamePart) => extras(filenamePart, 'nced');
-
-const extra = (filenamePart) => extras(filenamePart, 'extra');
-
-const oad = (filenamePart) => extras(filenamePart, 'oad');
 
 const implicitNaming = (filenamePart) => {
-  const re = /(?:^|\s)(\d{1,4})(?:\s*v\s*(\d+))?(?:[^\d]|$)/;
+  const re = /(?:^|\s)(\d{1,4})(?:\s*v\s*(\d+))?(?:[^\d]|$)/i;
 
-  return matchReg(filenamePart, re);
+  return matchReg(replacePart(filenamePart, ''), re);
 };
 
 const match = (filenamePart) => {
   let m;
-  let key = null;
+  let key;
+  let value;
+  let version;
 
-  // eslint-disable-next-line no-cond-assign
-  if (m = explicitNaming(filenamePart)) {
-    key = 'episode';
-  // eslint-disable-next-line no-cond-assign
-  } else if (m = ncop(filenamePart)) {
-    key = 'ncop';
-  // eslint-disable-next-line no-cond-assign
-  } else if (m = nced(filenamePart)) {
-    key = 'nced';
-  // eslint-disable-next-line no-cond-assign
-  } else if (m = extra(filenamePart)) {
-    key = 'extra';
-  // eslint-disable-next-line no-cond-assign
-  } else if (m = oad(filenamePart)) {
-    key = 'oad';
-  // eslint-disable-next-line no-cond-assign
-  } else if ((m = implicitNaming(filenamePart))) { // Questionable
-    if (Number(m[1]) < 1900) {
+  const explicit = explicitNaming(filenamePart);
+  if (explicit) {
+    m = explicit;
+
+    key = ((/^(?:e|ep|episode)$/i).test(explicit[1]) ? 'episode' : explicit[1].toLowerCase());
+    value = Number(explicit[2]);
+    version = Number(explicit[3]);
+  } else {
+    // Questionable
+    const implicit = implicitNaming(filenamePart);
+    if (implicit && Number(implicit[1]) < 1900) {
+      m = implicit;
+
       key = 'wildGuess';
+      value = Number(implicit[1]);
+      version = Number(implicit[2]);
     }
   }
 
-  if (m && key) {
-    const [, value, version] = m;
-    let episodeInfo = { [key]: Number(value) };
-
-    if (key !== 'episode') {
-      episodeInfo = { ...episodeInfo, episode: EPISODE_UNKNOWN };
-    }
+  if (m) {
+    let episodeInfo = { [key]: value };
 
     if (version) {
-      episodeInfo = { ...episodeInfo, version: Number(version) };
+      episodeInfo = { ...episodeInfo, version };
     }
 
     return { episodeInfo, match: m };

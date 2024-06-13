@@ -9,12 +9,11 @@ describe('episode', () => {
   });
   it('should determine episode', () => {
     testnames.forEach(({ filename, episodeInfo }) => {
-    //   try {
+      // try {
       expect(episode(filename)).toEqual(expect.objectContaining(episodeInfo));
-    //   } catch (err) {
-    //     console.error(filename, episode(filename), episodeInfo);
-    //     throw err;
-    //   }
+      // } catch (err) {
+      //   console.error(filename, episode(filename), episodeInfo);
+      // }
     });
   });
 });

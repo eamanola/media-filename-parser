@@ -39,6 +39,13 @@ const removeSource = (filename, { replacement }) => {
   return dlRemoved;
 };
 
+const removeFileSize = (filename, { replacement }) => {
+  const fileSizeRemoved = filename.replace(/\d+mb/gi, replacement);
+
+  return fileSizeRemoved;
+};
+
+// Questionable
 const removeKeywords = (filename, { replacement }) => {
   const keywords = [
     /Dual Audio/ig,
@@ -51,12 +58,6 @@ const removeKeywords = (filename, { replacement }) => {
   );
 
   return keywordsRemoved;
-};
-
-const removeFileSize = (filename, { replacement }) => {
-  const fileSizeRemoved = filename.replace(/\d+mb/gi, replacement);
-
-  return fileSizeRemoved;
 };
 
 const removeCodecs = (filename, { replacement }) => {

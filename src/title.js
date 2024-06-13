@@ -4,7 +4,7 @@ import { match as matchSeason } from './season';
 import { match as matchEpisode } from './episode';
 import { match as matchYear } from './year';
 
-const NAME_UNKNOWN = null;
+const TITLE_UNKNOWN = null;
 const replacement = ' ';
 
 const removeSeason = (filename) => {
@@ -56,11 +56,11 @@ const name = (filename) => {
 
   const trimmed = trimSpecialChars(dotsReplaced);
 
-  return trimmed.split(`${replacement}${replacement}`)[0] || NAME_UNKNOWN;
+  return trimmed.split(`${replacement}${replacement}`)[0] || TITLE_UNKNOWN;
 };
 
 export {
-  NAME_UNKNOWN,
+  TITLE_UNKNOWN,
 };
 
 export default name;

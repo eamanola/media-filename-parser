@@ -1,84 +1,84 @@
 [
   {
     "filename": "[FFF] Aku no Hana [BD][1080p-FLAC]/[FFF] Aku no Hana - 10 [BD][1080p-FLAC][12345678].mkv",
-    "name": "Aku no Hana",
+    "title": "Aku no Hana",
     "season": -1,
     "episodeInfo": { "wildGuess": 10 },
     "year": -1
   },
   {
     "filename": "[project-gxs] Goku Sayonara Zetsubou Sensei [10bit BD 720p]/S03E01.mkv",
-    "name": "Goku Sayonara Zetsubou Sensei",
+    "title": "Goku Sayonara Zetsubou Sensei",
     "season": 3,
     "episodeInfo": { "episode": 1 },
     "year": -1
   },
   {
     "filename": "[df68] One Piece Season 09 - Part 3 [1080p][x264][JPN][SUB]/One Piece - 311 - Everyone Makes a Great Escape! The Road to Victory is for the Pirates! [1080p][x264][AAC][Eng-Sub]-df68.mkv",
-    "name": "One Piece",
+    "title": "One Piece",
     "season": 9,
     "episodeInfo": { "wildGuess": 311 },
     "year": -1
   },
   {
     "filename": "[bonkai77] Katanagatari  [BD-1080p] [x265] [HEVC] [AAC] [10bit]/torrent.info.nfo",
-    "name": "Katanagatari",
+    "title": "Katanagatari",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": -1
   },
   {
     "filename": "[bonkai77] Katanagatari  [BD-1080p] [x265] [HEVC] [AAC] [10bit]/[bonkai77].Katanagatari.Episode.02.[BD.1080p.x265.HEVC.10bit].mkv",
-    "name": "Katanagatari",
+    "title": "Katanagatari",
     "season": -1,
     "episodeInfo": { "episode": 2 },
     "year": -1
   },
   {
     "filename": "Phineas.And.Ferb.The.Movie.Candace.Against.The.Universe.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4",
-    "name": "Phineas And Ferb The Movie Candace Against The Universe",
+    "title": "Phineas And Ferb The Movie Candace Against The Universe",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2020
   },
   {
     "filename": "[Judas] Noragami (Seasons 1-2 + OADs) [BD 1080p][HEVC x265 10bit][Dual-Audio][Eng-Subs]/[Judas] Noragami S2 - Aragoto/[Judas] Noragami - S02E03.mkv",
-    "name": "Noragami",
+    "title": "Noragami",
     "season": 2,
     "episodeInfo": { "episode": 3 },
     "year": -1
   },
   {
     "filename": "[Judas] Noragami (Seasons 1-2 + OADs) [BD 1080p][HEVC x265 10bit][Dual-Audio][Eng-Subs]/[Judas] Noragami S2 - Aragoto/[Judas] Noragami - S02 OAD 02.mkv",
-    "name": "Noragami",
+    "title": "Noragami",
     "season": 2,
     "episodeInfo": { "episode": -1, "oad": 2 },
     "year": -1
   },
   {
     "filename": "[Judas] Noragami (Seasons 1-2 + OADs) [BD 1080p][HEVC x265 10bit][Dual-Audio][Eng-Subs]/[Judas] Noragami S2 - Aragoto/[Judas] Noragami - S02 OAD03.mkv",
-    "name": "Noragami",
+    "title": "Noragami",
     "season": 2,
     "episodeInfo": { "episode": -1, "oad": 3 },
     "year": -1
   },
   {
     "filename": "[Judas] Noragami (Seasons 1-2 + OADs) [BD 1080p][HEVC x265 10bit][Dual-Audio][Eng-Subs]/[Judas] Noragami S2 - Aragoto/Extras/[Judas] Noragami S2 - NCED 03.mkv",
-    "name": "Noragami",
+    "title": "Noragami",
     "season": 2,
     "episodeInfo": { "episode": -1, "nced": 3 },
     "year": -1
   },
   {
     "filename": "[Judas] Noragami (Seasons 1-2 + OADs) [BD 1080p][HEVC x265 10bit][Dual-Audio][Eng-Subs]/[Judas] Noragami S2 - Aragoto/Extras/[Judas] Noragami S2 - NCOP 01.mkv",
-    "name": "Noragami",
+    "title": "Noragami",
     "season": 2,
     "episodeInfo": { "episode": -1, "ncop": 1 },
     "year": -1
   },
   {
     "filename": "[HorribleSubs] Re Zero kara Hajimeru Isekai Seikatsu - 35 [1080p].mkv",
-    "name": "Re Zero kara Hajimeru Isekai Seikatsu - 35",
+    "title": "Re Zero kara Hajimeru Isekai Seikatsu - 35",
     "comment": "wildguess removal from name unsupported",
     "season": -1,
     "episodeInfo": { "wildGuess": 35 },
@@ -86,203 +86,203 @@
   },
   {
     "filename": "The Intouchables (2011)/The Intouchables (2011).mp4",
-    "name": "The Intouchables",
+    "title": "The Intouchables",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2011
   },
   {
     "filename": "The Intouchables (2011)/The Intouchables (2011).en.srt",
-    "name": "The Intouchables",
+    "title": "The Intouchables",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2011
   },
   {
     "filename": "[UDF] Kamisama no Memochou (Heaven's Memo Pad) (BDRip 1080p x264 FLACx2) [dual-audio]/[UDF] Kamisama no Memochou (Heaven's Memo Pad) - 01 (BDRip 1080p x264 FLACx2) [dual-audio] [79DA640A].mkv",
-    "name": "Kamisama no Memochou",
+    "title": "Kamisama no Memochou",
     "season": -1,
     "episodeInfo": { "wildGuess": 1 },
     "year": -1
   },
   {
     "filename": "Mulan.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4",
-    "name": "Mulan",
+    "title": "Mulan",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2020
   },
   {
     "filename": "Tokyo Ghoul; Re S1 [BDRip 1080p AVC-YUV420P10]/[UQW] Tokyo Ghoul; Re S1 - Ep01 [BDRip 1080p AVC-YUV420P10].mkv",
-    "name": "Tokyo Ghoul; Re",
+    "title": "Tokyo Ghoul; Re",
     "season": 1,
     "episodeInfo": { "episode": 1 },
     "year": -1
   },
   {
     "filename": "Pets.United.2020.720p.WEBRip.800MB.x264-GalaxyRG[TGx]/Pets.United.2020.720p.WEBRip.800MB.x264-GalaxyRG.mkv",
-    "name": "Pets United",
+    "title": "Pets United",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2020
   },
   {
     "filename": "[Hakata Ramen] JoJo no Kimyou na Bouken (JoJo's Bizarre Adventure) - Seasons 1-5/[Hakata Ramen] JoJo S3 (Stardust Crusaders P2)/[Hakata Ramen] JoJo3 - 10.mkv",
-    "name": "JoJo no Kimyou na Bouken",
+    "title": "JoJo no Kimyou na Bouken",
     "season": 3,
     "episodeInfo": { "wildGuess": 10 },
     "year": -1
   },
   {
     "filename": "[PuyaSubs!] Strike the Blood II [720p][Batch]/[PuyaSubs!] Strike the Blood II - 01 [720p][648DB91B].mkv",
-    "name": "Strike the Blood II",
+    "title": "Strike the Blood II",
     "season": -1,
     "episodeInfo": { "wildGuess": 1 },
     "year": -1
   },
   {
     "filename": "Bill and Ted Face the Music.2020.HDRip.XviD.AC3-EVO.avi",
-    "name": "Bill and Ted Face the Music",
+    "title": "Bill and Ted Face the Music",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2020
   },
   {
     "filename": "[project-gxs] Sayonara Zetsubou Sensei [10bit BD 720p]/S01E12.mkv",
-    "name": "Sayonara Zetsubou Sensei",
+    "title": "Sayonara Zetsubou Sensei",
     "season": 1,
     "episodeInfo": { "episode": 12 },
     "year": -1
   },
   {
     "filename": "[project-gxs] Sayonara Zetsubou Sensei [10bit BD 720p]/Extra02.mkv",
-    "name": "Sayonara Zetsubou Sensei",
+    "title": "Sayonara Zetsubou Sensei",
     "season": -1,
     "episodeInfo": { "episode": -1, "extra": 2 },
     "year": -1
   },
   {
     "filename": "Inuyasha/001 - 033/[Fullmetal] Inuyasha - 03 [1080p][HEVC 10bits].mkv",
-    "name": "Inuyasha",
+    "title": "Inuyasha",
     "season": -1,
     "episodeInfo": { "wildGuess": 3 },
     "year": -1
   },
   {
     "filename": "[HorribleSubs] Boku no Hero Academia (01 - 88) [1080p] (Batch)/[HorribleSubs] Boku no Hero Academia - 27 [1080p].mkv",
-    "name": "Boku no Hero Academia",
+    "title": "Boku no Hero Academia",
     "season": -1,
     "episodeInfo": { "wildGuess": 27 },
     "year": -1
   },
   {
     "filename": "Chernobyl.COMPLETE.Season.1.S01.1080p.AMZN.WEB-DL.x265-HETeam/Chernobyl.S01E05.Vichnaya.Pamyat.1080p.AMZN.WEB-DL.x265-HETeam.mkv",
-    "name": "Chernobyl COMPLETE Season 1",
+    "title": "Chernobyl COMPLETE Season 1",
     "season": 1,
     "episodeInfo": { "episode": 5 },
     "year": -1
   },
   {
     "filename": "[Foxtrot] Vinland Saga [BD 720p AAC]/[Foxtrot] Vinland Saga - 01 [BD 720p AAC] [494CEFC6].mkv",
-    "name": "Vinland Saga",
+    "title": "Vinland Saga",
     "season": -1,
     "episodeInfo": { "wildGuess": 1 },
     "year": -1
   },
   {
     "filename": "Jungle.Beat.The.Movie.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4",
-    "name": "Jungle Beat The Movie",
+    "title": "Jungle Beat The Movie",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2020
   },
   {
     "filename": "Kaguya-sama wa Kokurasetai S2/[MoeDesuDesu] Kaguya-sama wa Kokurasetai S2 - 12.mkv",
-    "name": "Kaguya-sama wa Kokurasetai",
+    "title": "Kaguya-sama wa Kokurasetai",
     "season": 2,
     "episodeInfo": { "wildGuess": 12 },
     "year": -1
   },
   {
     "filename": "[project-gxs] Zan Sayonara Zetsubou Sensei [10bit BD 720p]/S03E11.mkv",
-    "name": "Zan Sayonara Zetsubou Sensei",
+    "title": "Zan Sayonara Zetsubou Sensei",
     "season": 3,
     "episodeInfo": { "episode": 11 },
     "year": -1
   },
   {
     "filename": "El.Camino.A.Breaking.Bad.Movie.2019.1080p.WEBRip.x264-[YTS.LT].mp4",
-    "name": "El Camino A Breaking Bad Movie",
+    "title": "El Camino A Breaking Bad Movie",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2019
   },
   {
     "filename": "Greyhound.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4",
-    "name": "Greyhound",
+    "title": "Greyhound",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": 2020
   },
   {
     "filename": "[zang] Gekijouban Gintama - Shinyaku Benizakura-hen [BD 1080p OPUS] [AAE32A79].mkv",
-    "name": "Gekijouban Gintama - Shinyaku Benizakura-hen",
+    "title": "Gekijouban Gintama - Shinyaku Benizakura-hen",
     "season": -1,
     "episodeInfo": { "episode": -1 },
     "year": -1
   },
   {
     "filename": "JoJo's Bizarre Adventure - OVA [2000]/3. JoJo's Bizarre Adventure - OVA [2000] [480p x264 AC3][kuchikirukia]v2.mkv",
-    "name": "JoJo's Bizarre Adventure - OVA",
+    "title": "JoJo's Bizarre Adventure - OVA",
     "season": -1,
     "episodeInfo": { "wildGuess": 3 },
     "year": 2000
   },
   {
     "filename": "The Big Bang Theory Season 1  (1080p Bluray x265 10bit Joy)/The Big Bang Theory S01E01 Pilot (1080p x265 10bit Joy).mkv",
-    "name": "The Big Bang Theory",
+    "title": "The Big Bang Theory",
     "season": 1,
     "episodeInfo": { "episode": 1 },
     "year": -1
   },
   {
     "filename": "[HorribleSubs] Re Zero kara Hajimeru Isekai Seikatsu (Shin Henshuu-ban) (01-13) [1080p] (Unofficial Batch)/[HorribleSubs] Re Zero kara Hajimeru Isekai Seikatsu - Director'\\''s Cut - 01 [1080p].mkv",
-    "name": "Re Zero kara Hajimeru Isekai Seikatsu",
+    "title": "Re Zero kara Hajimeru Isekai Seikatsu",
     "season": -1,
     "episodeInfo": { "wildGuess": 1 },
     "year": -1
   },
   {
     "filename": "[Judas] Kimetsu no Yaiba (Season 1) [BD 1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs]/[Judas] Kimetsu no Yaiba - S01E01.mkv",
-    "name": "Kimetsu no Yaiba",
+    "title": "Kimetsu no Yaiba",
     "season": 1,
     "episodeInfo": { "episode": 1 },
     "year": -1
   },
   {
     "filename": "[Judas] Kimetsu no Yaiba (Season 1) [BD 1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs]/Extras/[Judas] Kimetsu no Yaiba - NCED 02 (ep 19).mkv",
-    "name": "Kimetsu no Yaiba",
+    "title": "Kimetsu no Yaiba",
     "season": 1,
     "episodeInfo": { "episode": -1, "nced": 2 },
     "year": -1
   },
   {
     "filename": "[Judas] Kimetsu no Yaiba (Season 1) [BD 1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs]/Extras/[Judas] Kimetsu no Yaiba - NCOP 01.mkv",
-    "name": "Kimetsu no Yaiba",
+    "title": "Kimetsu no Yaiba",
     "season": 1,
     "episodeInfo": { "episode": -1, "ncop": 1 },
     "year": -1
   },
   {
     "filename": "NieR Automata Ver1.1a S01 1080p Dual Audio WEBRip DD+ x265-EMBER/S01E01-or not to [B]e [268B933B].mkv",
-    "name": "NieR Automata Ver1 1a",
+    "title": "NieR Automata Ver1 1a",
     "season": 1,
     "episodeInfo": { "episode": 1 },
     "year": -1
   },
   {
     "filename": "[SubsPlease] Kimetsu no Yaiba - Hashira Geiko-hen - 05 (1080p) [C09018C7].mkv",
-    "name": "Kimetsu no Yaiba - Hashira Geiko-hen - 05",
+    "title": "Kimetsu no Yaiba - Hashira Geiko-hen - 05",
     "comment": "wildguess removal from name unsupported",
     "season": -1,
     "episodeInfo": { "wildGuess": 5 },
@@ -290,44 +290,58 @@
   },
   {
     "filename": "[SubsPlease] Mushoku Tensei S2 - 21 (1080p) [FC6AD092].mkv",
-    "name": "Mushoku Tensei",
+    "title": "Mushoku Tensei",
     "season": 2,
     "episodeInfo": { "wildGuess": 21 },
     "year": -1
   },
   {
     "filename": "[Erai-raws] Tiger and Bunny - 01 ~ 25 [720p][Multiple Subtitle]/[Erai-raws] Tiger and Bunny - 05 [720p][Multiple Subtitle][C8B1BC55].mkv",
-    "name": "Tiger and Bunny - 01 ~ 25",
+    "title": "Tiger and Bunny - 01 ~ 25",
     "season": -1,
     "episodeInfo": { "wildGuess": 5 },
     "year": -1
   },
   {
     "filename": "Delicious.in.Dungeon.S01E23.1080p.DSNP.WEB-DL.DDP5.1.H.264-VARYG.mkv",
-    "name": "Delicious in Dungeon",
+    "title": "Delicious in Dungeon",
     "season": 1,
     "episodeInfo": { "episode": 23 },
     "year": -1
   },
   {
     "filename": "[SubsPlease] Kono Subarashii Sekai ni Shukufuku wo! S3 - 07 (1080p) [7E6E9718].mkv",
-    "name": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "title": "Kono Subarashii Sekai ni Shukufuku wo!",
     "season": 3,
     "episodeInfo": { "wildGuess": 7 },
     "year": -1
   },
   {
     "filename": "Kimetsu.no.Yaiba.S05E05.1080p.UNEXT.WEB-DL.JPN.AAC2.0.H.264-ToonsHub.mkv",
-    "name": "Kimetsu no Yaiba",
+    "title": "Kimetsu no Yaiba",
     "season": 5,
     "episodeInfo": { "episode": 5 },
     "year": -1
   },
   {
     "filename": "Sousou no Frieren S01 1080p WEBRip AAC x265-EMBER/[EMBER] Sousou no Frieren - 01.mkv",
-    "name": "Sousou no Frieren",
+    "title": "Sousou no Frieren",
     "season": 1,
     "episodeInfo": { "wildGuess": 1 },
+    "year": -1
+  },
+  {
+    "filename": "[SubsPlease] Spice and Wolf (2024) - 09 (1080p) [2647222D].mkv",
+    "title": "Spice and Wolf",
+    "season": -1,
+    "episodeInfo": { "wildGuess": 9 },
+    "year": 2024
+  },
+  {
+    "filename": "[Netflix-Subs] Saint Seiya Knight of the Zodiac Season 2 Part 2 [WEB 1080p HEVC] (Batch)/[Netflix-Subs] Saint Seiya Knight of the Zodiac Battle for Sanctuary S2 Part 2 - 03 [1080p HEVC].mkv",
+    "title": "Saint Seiya Knight of the Zodiac",
+    "season": 2,
+    "episodeInfo": { "wildGuess": 3 },
     "year": -1
   }
 ]

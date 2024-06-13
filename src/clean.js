@@ -41,10 +41,14 @@ const removeSource = (filename, { replacement }) => {
 
 const removeKeywords = (filename, { replacement }) => {
   const keywords = [
-    'Dual Audio',
+    /Dual Audio/ig,
+    /part \d+/ig,
   ];
 
-  const keywordsRemoved = filename.replace(new RegExp(keywords.join('|'), 'gi'), replacement);
+  const keywordsRemoved = keywords.reduce(
+    (currentValue, keyword) => currentValue.replace(keyword, replacement),
+    filename,
+  );
 
   return keywordsRemoved;
 };

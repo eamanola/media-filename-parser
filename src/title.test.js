@@ -1,7 +1,7 @@
 import fs from 'fs';
-import name from './name';
+import title from './title';
 
-describe('name', () => {
+describe('title', () => {
   let testnames = null;
 
   beforeAll(() => {
@@ -9,9 +9,9 @@ describe('name', () => {
   });
 
   it('should determine name', () => {
-    testnames.forEach(({ filename, name: n }) => {
+    testnames.forEach(({ filename, title: expectedTitle }) => {
       // try {
-      expect(name(filename)).toBe(n);
+      expect(title(filename)).toBe(expectedTitle);
       // } catch (err) {
       //   console.log(filename, name(filename));
       // }

@@ -338,6 +338,41 @@
     "year": 2024
   },
   {
+    "filename": "[Netflix-Subs] Saint Seiya Knight of the Zodiac Season 2 Part 2 [WEB 1080p HEVC] (Batch)/[Netflix-Subs] Saint Seiya Knight of the Zodiac Battle for Sanctuary S2 Part 2 - 01v2 [1080p HEVC].mkv",
+    "title": "Saint Seiya Knight of the Zodiac",
+    "season": 2,
+    "episodeInfo": { "wildGuess": 1, "version": 2 },
+    "year": -1
+  },
+  {
+    "filename": "Version Test Wildguess/01 v2.mkv",
+    "title": "Version Test Wildguess",
+    "season": -1,
+    "episodeInfo": { "wildGuess": 1, "version": 2 },
+    "year": -1
+  },
+  {
+    "filename": "Version Test Extra/ncop 01v2.mkv",
+    "title": "Version Test Extra",
+    "season": -1,
+    "episodeInfo": { "ncop": 1, "version": 2 },
+    "year": -1
+  },
+  {
+    "filename": "Version Test Explicit/e01v2.mkv",
+    "title": "Version Test Explicit",
+    "season": -1,
+    "episodeInfo": { "episode": 1, "version": 2 },
+    "year": -1
+  },
+  {
+    "filename": "Version Test Explicit s2 e01 v2.mkv",
+    "title": "Version Test Explicit",
+    "season": 2,
+    "episodeInfo": { "episode": 1, "version": 2 },
+    "year": -1
+  },
+  {
     "filename": "[Netflix-Subs] Saint Seiya Knight of the Zodiac Season 2 Part 2 [WEB 1080p HEVC] (Batch)/[Netflix-Subs] Saint Seiya Knight of the Zodiac Battle for Sanctuary S2 Part 2 - 03 [1080p HEVC].mkv",
     "title": "Saint Seiya Knight of the Zodiac",
     "season": 2,

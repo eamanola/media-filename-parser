@@ -13,7 +13,7 @@ describe('title', () => {
       // try {
       expect(title(filename)).toBe(expectedTitle);
       // } catch (err) {
-      //   console.log(filename, name(filename));
+      //   console.log(filename, title(filename));
       // }
     });
   });

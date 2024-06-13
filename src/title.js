@@ -18,9 +18,9 @@ const removeSeason = (filename) => {
 };
 
 const removeEpisode = (filename) => {
-  const { match: episodeToRemove, wildGuess } = matchEpisode(filename);
+  const { match: episodeToRemove, episodeInfo } = matchEpisode(filename);
 
-  const episodeRemoved = episodeToRemove && !wildGuess
+  const episodeRemoved = episodeToRemove && !episodeInfo.wildGuess
     ? filename.replace(episodeToRemove[0], replacement)
     : filename;
 

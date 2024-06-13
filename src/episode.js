@@ -6,13 +6,13 @@ const EPISODE_UNKNOWN = -1;
 const matchReg = (filenamePart, re) => filenamePart.match(re);
 
 const extras = (filenamePart, label) => {
-  const re = new RegExp(`(?:^|\\s+)${label}\\s*(\\d+)`, 'i');
+  const re = new RegExp(`(?:^|\\s+)${label}\\s*(\\d+)(?:\\s*v\\s*(\\d+))?`, 'i');
 
   return matchReg(filenamePart, re);
 };
 
 const explicitNaming = (filenamePart) => {
-  const re = /(?:^|[^a-zA-Z])(?:e|ep|episode)(?:\.|\s*)(\d+)/i;
+  const re = /(?:^|[^a-zA-Z])(?:e|ep|episode)(?:\.|\s*)(\d+)(?:\s*v\s*(\d+))?/i;
 
   return matchReg(filenamePart, re);
 };
@@ -26,55 +26,62 @@ const extra = (filenamePart) => extras(filenamePart, 'extra');
 const oad = (filenamePart) => extras(filenamePart, 'oad');
 
 const implicitNaming = (filenamePart) => {
-  const re = /(?:^|\s)(\d{1,4})(?:[^\d]|$)/;
+  const re = /(?:^|\s)(\d{1,4})(?:\s*v\s*(\d+))?(?:[^\d]|$)/;
 
   return matchReg(filenamePart, re);
 };
 
 const match = (filenamePart) => {
-  let m = explicitNaming(filenamePart);
-  if (m) {
-    return { episode: Number(m[1]), match: m };
-  }
+  let m;
+  let key = null;
 
-  m = ncop(filenamePart);
-  if (m) {
-    return { episode: EPISODE_UNKNOWN, ncop: Number(m[1]), match: m };
-  }
-
-  m = nced(filenamePart);
-  if (m) {
-    return { episode: EPISODE_UNKNOWN, nced: Number(m[1]), match: m };
-  }
-
-  m = extra(filenamePart);
-  if (m) {
-    return { episode: EPISODE_UNKNOWN, extra: Number(m[1]), match: m };
-  }
-
-  m = oad(filenamePart);
-  if (m) {
-    return { episode: EPISODE_UNKNOWN, oad: Number(m[1]), match: m };
-  }
-
-  // Questionable
-  m = implicitNaming(filenamePart);
-  if (m) {
+  // eslint-disable-next-line no-cond-assign
+  if (m = explicitNaming(filenamePart)) {
+    key = 'episode';
+  // eslint-disable-next-line no-cond-assign
+  } else if (m = ncop(filenamePart)) {
+    key = 'ncop';
+  // eslint-disable-next-line no-cond-assign
+  } else if (m = nced(filenamePart)) {
+    key = 'nced';
+  // eslint-disable-next-line no-cond-assign
+  } else if (m = extra(filenamePart)) {
+    key = 'extra';
+  // eslint-disable-next-line no-cond-assign
+  } else if (m = oad(filenamePart)) {
+    key = 'oad';
+  // eslint-disable-next-line no-cond-assign
+  } else if ((m = implicitNaming(filenamePart))) { // Questionable
     if (Number(m[1]) < 1900) {
-      return { episode: EPISODE_UNKNOWN, wildGuess: Number(m[1]), match: m };
+      key = 'wildGuess';
     }
   }
 
-  return { match: null };
+  if (m && key) {
+    const [, value, version] = m;
+    let episodeInfo = { [key]: Number(value) };
+
+    if (key !== 'episode') {
+      episodeInfo = { ...episodeInfo, episode: EPISODE_UNKNOWN };
+    }
+
+    if (version) {
+      episodeInfo = { ...episodeInfo, version: Number(version) };
+    }
+
+    return { episodeInfo, match: m };
+  }
+
+  return { episodeInfo: null, match: null };
 };
 
 const episode = (filename) => {
   const parts = clean(filename).split(path.sep).reverse();
 
   for (let i = 0, il = parts.length; i < il; i += 1) {
-    const { match: m, ...rest } = match(parts[i]);
-    if (m) {
-      return { ...rest };
+    const { episodeInfo } = match(parts[i]);
+    if (episodeInfo) {
+      return episodeInfo;
     }
   }
 

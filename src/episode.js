@@ -12,7 +12,7 @@ const explicitNaming = (filenamePart) => {
 };
 
 const implicitNaming = (filenamePart) => {
-  const re = /(?:^|\s)(\d{1,4})(?:\s*v\s*(\d+))?(?:[^\d]|$)/i;
+  const re = /(?:^|\s)(\d{1,4})(?:\s*v\s*(\d+))?(?:[^\dA-Za-z]|$)/i;
 
   return matchReg(replacePart(filenamePart, ''), re);
 };

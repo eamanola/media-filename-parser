@@ -1,5 +1,5 @@
 import path from 'path';
-import clean, { replacePart } from './clean';
+import clean, { replacePart } from './clean.js';
 
 const EPISODE_UNKNOWN = -1;
 

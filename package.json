@@ -1,8 +1,10 @@
 {
   "name": "media-filename-parser",
   "version": "1.0.0",
-  "description": "Extract information from media filename",
+  "type": "module",
   "main": "index.js",
+  "description": "Extract information from media filename",
+  "git": "https://github.com/eamanola/media-filename-parser.git",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",

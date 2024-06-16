@@ -5,7 +5,7 @@ let testnames = null;
 
 describe('episode', () => {
   beforeAll(() => {
-    testnames = JSON.parse(fs.readFileSync('./test-names.json', 'utf8'));
+    testnames = JSON.parse(fs.readFileSync('./src/test-names.json', 'utf8'));
   });
   it('should determine episode', () => {
     testnames.forEach(({ filename, episodeInfo }) => {

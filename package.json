@@ -2,19 +2,20 @@
   "name": "media-filename-parser",
   "version": "1.0.0",
   "type": "module",
+  "main": "./dist/index.bundle.js",
   "exports": {
     ".": "./dist/index.bundle.js"
   },
   "description": "Extract information from media filename",
   "git": "https://github.com/eamanola/media-filename-parser.git",
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
     "prepare": "husky install",
     "build": "webpack"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.23.3",
     "@babel/preset-env": "^7.24.7",

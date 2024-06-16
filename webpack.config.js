@@ -1,5 +1,8 @@
-const TerserPlugin = require('terser-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
+import TerserPlugin from 'terser-webpack-plugin';
+import nodeExternals from 'webpack-node-externals';
+
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 const entry = {
   index: ['./src/index.js'],
@@ -7,9 +10,9 @@ const entry = {
 
 const output = {
   filename: 'index.bundle.js',
-  path: `${__dirname}/dist`,
+  path: `${dirname(fileURLToPath(import.meta.url))}/dist`,
   library: {
-    type: "module",
+    type: 'module',
   },
 };
 
@@ -46,7 +49,7 @@ const experiments = {
   outputModule: true,
 };
 
-module.exports = {
+export default {
   mode: 'production',
   entry,
   output,

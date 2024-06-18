@@ -1,4 +1,5 @@
 npm test
 npm run lint
-# npm run bump-patch
 npm run build
+npm run bump-patch
+git add package.json

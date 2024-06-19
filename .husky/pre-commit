@@ -1,8 +1,2 @@
 npm test
 npm run lint
-
-npm run build
-git add dist
-
-npm run bump-patch
-git add package.json package-lock.json

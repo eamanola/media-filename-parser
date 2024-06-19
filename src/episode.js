@@ -1,7 +1,7 @@
 import path from 'path';
 import clean, { replacePart } from './clean.js';
 
-const EPISODE_UNKNOWN = -1;
+const EPISODE_UNKNOWN = null;
 
 const matchReg = (filenamePart, re) => filenamePart.match(re);
 
@@ -17,39 +17,64 @@ const implicitNaming = (filenamePart) => {
   return matchReg(replacePart(filenamePart, ''), re);
 };
 
-const match = (filenamePart) => {
-  let m;
-  let key;
-  let value;
-  let version;
-
-  const explicit = explicitNaming(filenamePart);
-  if (explicit) {
-    m = explicit;
-
-    key = ((/^(?:e|ep|episode)$/i).test(explicit[1]) ? 'episode' : explicit[1].toLowerCase());
-    value = Number(explicit[2]);
-    version = Number(explicit[3]);
-  } else {
-    // Questionable
-    const implicit = implicitNaming(filenamePart);
-    if (implicit && Number(implicit[1]) < 1900) {
-      m = implicit;
-
-      key = 'wildGuess';
-      value = Number(implicit[1]);
-      version = Number(implicit[2]);
-    }
-  }
+const explicit = (filenamePart) => {
+  const m = explicitNaming(filenamePart);
 
   if (m) {
-    let episodeInfo = { [key]: value };
+    const value = Number(m[2]);
+    const version = Number(m[3]) || null;
+    const isWildGuess = false;
+    const extra = /ncop|nced|extra|oad/i.test(m[1]) ? m[1].toLowerCase() : null;
 
-    if (version) {
-      episodeInfo = { ...episodeInfo, version };
-    }
+    return {
+      m,
+      episodeInfo: {
+        episode: value,
+        version,
+        isWildGuess,
+        extra,
+      },
+    };
+  }
 
-    return { episodeInfo, match: m };
+  return EPISODE_UNKNOWN;
+};
+
+const wildGuess = (filenamePart) => {
+  const m = implicitNaming(filenamePart);
+
+  if (m && Number(m[1]) < 1900) {
+    const value = Number(m[1]);
+    const version = Number(m[2]) || null;
+    const isWildGuess = true;
+    const extra = null;
+
+    return {
+      m,
+      episodeInfo: {
+        episode: value,
+        version,
+        isWildGuess,
+        extra,
+      },
+    };
+  }
+
+  return EPISODE_UNKNOWN;
+};
+
+const match = (filenamePart) => {
+  const explicitMatch = explicit(filenamePart);
+  if (explicitMatch !== EPISODE_UNKNOWN) {
+    const { m, episodeInfo } = explicitMatch;
+    return { match: m, episodeInfo };
+  }
+
+  // Questionable
+  const wildGuessMatch = wildGuess(filenamePart);
+  if (wildGuessMatch !== EPISODE_UNKNOWN) {
+    const { m, episodeInfo } = wildGuessMatch;
+    return { match: m, episodeInfo };
   }
 
   return { episodeInfo: null, match: null };
@@ -65,7 +90,7 @@ const episode = (filename) => {
     }
   }
 
-  return { episode: EPISODE_UNKNOWN };
+  return EPISODE_UNKNOWN;
 };
 
 export {

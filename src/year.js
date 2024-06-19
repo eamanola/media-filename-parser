@@ -1,4 +1,4 @@
-const YEAR_UNKNOWN = -1;
+const YEAR_UNKNOWN = null;
 
 const re = /(?:^|[\s([.])(\d{4})(?:[\s)\].]|$)/i;
 

@@ -1,6 +1,6 @@
 {
   "name": "media-filename-parser",
-  "version": "0.0.18",
+  "version": "0.0.22",
   "type": "module",
   "main": "./dist/index.bundle.js",
   "exports": {
@@ -15,7 +15,7 @@
     "lint": "eslint .",
     "prepare": "husky install",
     "build": "webpack",
-    "bump-patch": "bump-pkg-json PATCH"
+    "bump-patch": "bump-pkg-json PATCH && npm install --package-lock-only --ignore-scripts"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.23.3",

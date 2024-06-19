@@ -1,6 +1,6 @@
 import path from 'path';
 
-const SEASON_UNKNOWN = -1;
+const SEASON_UNKNOWN = null;
 
 const re = /(?:^|[\s([.])(?:season|s)\s*(\d+)/i;
 

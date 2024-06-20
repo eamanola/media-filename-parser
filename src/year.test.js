@@ -9,9 +9,9 @@ describe('year', () => {
   });
 
   it('should determine year', () => {
-    testnames.forEach(({ filename, year: y }) => {
+    testnames.forEach(({ filename, year: expectedYear }) => {
       // try {
-      expect(year(filename)).toBe(y);
+      expect(year(filename)).toBe(expectedYear);
       // } catch (err) {
       //   console.log(filename, year(filename), y)
       // }

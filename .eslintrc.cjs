@@ -3,11 +3,17 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: 'airbnb-base',
+  extends: [
+    'airbnb-base',
+    // 'eslint:all',
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
   },
   rules: {
-    'import/extensions': [0],
+    'import/extensions': ['off'],
+    'sort-keys': ['error'],
+    'require-unicode-regexp': ['error'],
+    'prefer-named-capture-group': ['error'],
   },
 };

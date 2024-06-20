@@ -10,22 +10,18 @@ const entry = {
 
 const output = {
   filename: 'index.bundle.js',
+  library: { type: 'module' },
   path: `${dirname(fileURLToPath(import.meta.url))}/dist`,
-  library: {
-    type: 'module',
-  },
 };
 
 const aModule = {
   rules: [
     {
-      test: /\.js$/i,
-      exclude: [/node_modules/],
+      exclude: [/node_modules/u],
+      test: /\.js$/iu,
       use: {
         loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-        },
+        options: { presets: ['@babel/preset-env'] },
       },
     },
   ],
@@ -33,11 +29,7 @@ const aModule = {
 
 const plugins = [];
 
-const optimization = {
-  minimizer: [
-    new TerserPlugin(),
-  ],
-};
+const optimization = { minimizer: [new TerserPlugin()] };
 
 const resolve = {
   fallback: {
@@ -45,19 +37,16 @@ const resolve = {
   },
 };
 
-const experiments = {
-  outputModule: true,
-};
+const experiments = { outputModule: true };
 
 export default {
-  mode: 'production',
   entry,
-  output,
-  module: aModule,
-  plugins,
-  optimization,
-  resolve,
   experiments,
-  // externalsPresets: { node: true },
   externals: [nodeExternals()],
+  mode: 'production',
+  module: aModule,
+  optimization,
+  output,
+  plugins,
+  resolve,
 };

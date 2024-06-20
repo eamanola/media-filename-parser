@@ -9,9 +9,9 @@ describe('season', () => {
   });
 
   it('should determine season', () => {
-    testnames.forEach(({ filename, season: s }) => {
+    testnames.forEach(({ filename, season: expectedSeason }) => {
       // try {
-      expect(season(filename)).toBe(s);
+      expect(season(filename)).toBe(expectedSeason);
       // } catch (err) {
       //   console.log(filename, season(filename))
       // }

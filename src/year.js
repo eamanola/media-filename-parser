@@ -1,16 +1,18 @@
 const YEAR_UNKNOWN = null;
 
-const re = /(?:^|[\s([.])(\d{4})(?:[\s)\].]|$)/i;
+const MIN_YEAR = 1900; // line between wild guesses and years
+
+const re = /(?:^|[\s([.])(?<year>\d{4})(?:[\s)\].]|$)/iu;
 
 const match = (filenamePart) => filenamePart.match(re);
 
 const year = (filename) => {
-  const m = match(filename);
+  const matched = match(filename);
 
-  if (m) {
-    const y = Number(m[1]);
-    if (y > 1900) {
-      return y;
+  if (matched) {
+    const value = Number(matched.groups.year);
+    if (value > MIN_YEAR) {
+      return value;
     }
   }
 
@@ -19,6 +21,7 @@ const year = (filename) => {
 
 export {
   YEAR_UNKNOWN,
+  MIN_YEAR,
   match,
 };
 

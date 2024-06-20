@@ -2,18 +2,18 @@ import path from 'path';
 
 const SEASON_UNKNOWN = null;
 
-const re = /(?:^|[\s([.])(?:season|s)\s*(\d+)/i;
+const re = /(?:^|[\s([.])(?:season|s)\s*(?<season>\d+)/iu;
 
 const match = (filenamePart) => filenamePart.match(re);
 
 const season = (filename) => {
   const parts = filename.split(path.sep).reverse();
-  let m = null;
+  let matched = null;
 
   for (let i = 0, il = parts.length; i < il; i += 1) {
-    m = match(parts[i]);
-    if (m) {
-      return Number(m[1]);
+    matched = match(parts[i]);
+    if (matched) {
+      return Number(matched.groups.season);
     }
   }
 

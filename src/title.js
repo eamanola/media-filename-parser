@@ -37,7 +37,7 @@ const removeYear = (filename) => {
   return yearRemoved;
 };
 
-const replaceDots = (filename) => filename.replace(/\./g, replacement);
+const replaceDots = (filename) => filename.replace(/\./gu, replacement);
 
 const name = (filename) => {
   const cleaned = clean(filename.split(path.sep)[0], { replacement });

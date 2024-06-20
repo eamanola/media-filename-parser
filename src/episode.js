@@ -1,39 +1,43 @@
 import path from 'path';
+
 import clean, { replacePart } from './clean.js';
+import { MIN_YEAR } from './year.js';
 
 const EPISODE_UNKNOWN = null;
 
 const matchReg = (filenamePart, re) => filenamePart.match(re);
 
 const explicitNaming = (filenamePart) => {
-  const re = /(?:^|[^a-zA-Z])(e|ep|episode|ncop|nced|extra|oad)(?:\.|\s*)(\d+)(?:\s*v\s*(\d+))?/i;
+  const re = /(?:^|[^a-zA-Z])(?<type>e|ep|episode|ncop|nced|extra|oad)(?:\.|\s*)(?<episode>\d+)(?:\s*v\s*(?<version>\d+))?/iu;
 
   return matchReg(filenamePart, re);
 };
 
 const implicitNaming = (filenamePart) => {
-  const re = /(?:^|\s)(\d{1,4})(?:\s*v\s*(\d+))?(?:[^\dA-Za-z]|$)/i;
+  const re = /(?:^|\s)(?<episode>\d{1,4})(?:\s*v\s*(?<version>\d+))?(?:[^\dA-Za-z]|$)/iu;
 
   return matchReg(replacePart(filenamePart, ''), re);
 };
 
 const explicit = (filenamePart) => {
-  const m = explicitNaming(filenamePart);
+  const matched = explicitNaming(filenamePart);
 
-  if (m) {
-    const value = Number(m[2]);
-    const version = Number(m[3]) || null;
+  if (matched) {
+    const value = Number(matched.groups.episode);
+    const version = Number(matched.groups.version) || null;
     const isWildGuess = false;
-    const extra = /ncop|nced|extra|oad/i.test(m[1]) ? m[1].toLowerCase() : null;
+    const extra = /ncop|nced|extra|oad/ui.test(matched.groups.type)
+      ? matched.groups.type.toLowerCase()
+      : null;
 
     return {
-      m,
       episodeInfo: {
         episode: value,
-        version,
-        isWildGuess,
         extra,
+        isWildGuess,
+        version,
       },
+      matched,
     };
   }
 
@@ -41,22 +45,22 @@ const explicit = (filenamePart) => {
 };
 
 const wildGuess = (filenamePart) => {
-  const m = implicitNaming(filenamePart);
+  const matched = implicitNaming(filenamePart);
 
-  if (m && Number(m[1]) < 1900) {
-    const value = Number(m[1]);
-    const version = Number(m[2]) || null;
+  if (matched && Number(matched.groups.episode) < MIN_YEAR) {
+    const value = Number(matched.groups.episode);
+    const version = Number(matched.groups.version) || null;
     const isWildGuess = true;
     const extra = null;
 
     return {
-      m,
       episodeInfo: {
         episode: value,
-        version,
-        isWildGuess,
         extra,
+        isWildGuess,
+        version,
       },
+      matched,
     };
   }
 
@@ -66,15 +70,15 @@ const wildGuess = (filenamePart) => {
 const match = (filenamePart) => {
   const explicitMatch = explicit(filenamePart);
   if (explicitMatch !== EPISODE_UNKNOWN) {
-    const { m, episodeInfo } = explicitMatch;
-    return { match: m, episodeInfo };
+    const { matched, episodeInfo } = explicitMatch;
+    return { episodeInfo, match: matched };
   }
 
   // Questionable
   const wildGuessMatch = wildGuess(filenamePart);
   if (wildGuessMatch !== EPISODE_UNKNOWN) {
-    const { m, episodeInfo } = wildGuessMatch;
-    return { match: m, episodeInfo };
+    const { matched, episodeInfo } = wildGuessMatch;
+    return { episodeInfo, match: matched };
   }
 
   return { episodeInfo: null, match: null };

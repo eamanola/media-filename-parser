@@ -1,6 +1,6 @@
 {
   "name": "media-filename-parser",
-  "version": "0.0.27",
+  "version": "0.0.30",
   "type": "module",
   "main": "./dist/index.bundle.js",
   "exports": {
@@ -16,7 +16,7 @@
     "prepare": "husky install",
     "build": "webpack",
     "bump-patch": "bump-pkg-json PATCH && npm install --package-lock-only --ignore-scripts",
-    "publish-package": "npm run build && npm run bump-patch && git add package.json package-lock.json && npm run build && npm publish --access public"
+    "publish-package": "npm run build && npm run bump-patch && npm publish --access public"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.23.3",

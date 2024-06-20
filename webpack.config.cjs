@@ -1,8 +1,5 @@
-import TerserPlugin from 'terser-webpack-plugin';
-import nodeExternals from 'webpack-node-externals';
-
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+const TerserPlugin = require('terser-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 const entry = {
   index: ['./src/index.js'],
@@ -11,7 +8,7 @@ const entry = {
 const output = {
   filename: 'index.bundle.js',
   library: { type: 'module' },
-  path: `${dirname(fileURLToPath(import.meta.url))}/dist`,
+  path: `${__dirname}/dist`,
 };
 
 const aModule = {
@@ -33,13 +30,13 @@ const optimization = { minimizer: [new TerserPlugin()] };
 
 const resolve = {
   fallback: {
-    path: false,
+    path: require.resolve('path-browserify'),
   },
 };
 
 const experiments = { outputModule: true };
 
-export default {
+module.exports = {
   entry,
   experiments,
   externals: [nodeExternals()],

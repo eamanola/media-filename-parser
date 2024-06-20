@@ -1,5 +1,5 @@
 # media-filename-parser
-Extract information from media filename
+Extracts media information from filename
 
 * Title
 
@@ -11,4 +11,5 @@ Extract information from media filename
 
 * Year
 
-Please update test-names.json with new entries.
+Feel free to add your cases to ./src/test-names.json
+

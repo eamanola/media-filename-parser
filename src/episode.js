@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 
 import clean, { replacePart } from './clean.js';
 import { MIN_YEAR } from './year.js';

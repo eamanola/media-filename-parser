@@ -15,5 +15,6 @@ module.exports = {
     'sort-keys': ['error'],
     'require-unicode-regexp': ['error'],
     'prefer-named-capture-group': ['error'],
+    'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
   },
 };

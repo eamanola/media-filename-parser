@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import clean, { trimSpecialChars } from './clean.js';
 import { match as matchSeason } from './season.js';
 import { match as matchEpisode } from './episode.js';

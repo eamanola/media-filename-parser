@@ -624,6 +624,30 @@
     "season": null,
     "episodeInfo": null,
     "year": null
+  },
+  {
+    "filename": "Kusuriya no Hitorigoto S01 1080p WEBRip AAC x265-EMBER/[EMBER] Kusuriya no Hitorigoto - 04 V2.mkv",
+    "title": "Kusuriya no Hitorigoto",
+    "season": 1,
+    "episodeInfo": {
+      "episode": 4,
+      "isWildGuess": true,
+      "extra": null,
+      "version": 2
+    },
+    "year": null
+  },
+  {
+    "filename": "Kusuriya no Hitorigoto S01 1080p WEBRip AAC x265-EMBER/[EMBER] Kusuriya no Hitorigoto - 01.mkv",
+    "title": "Kusuriya no Hitorigoto",
+    "season": 1,
+    "episodeInfo": {
+      "episode": 1,
+      "isWildGuess": true,
+      "extra": null,
+      "version": null
+    },
+    "year": null
   }
 ]
 

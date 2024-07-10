@@ -5,7 +5,7 @@ import { match as matchEpisode } from './episode.js';
 import { match as matchYear } from './year.js';
 
 const TITLE_UNKNOWN = null;
-const replacement = ' ';
+const replacement = '---';
 
 const removeSeason = (filename) => {
   const seasonToRemove = matchSeason(filename);
@@ -37,7 +37,7 @@ const removeYear = (filename) => {
   return yearRemoved;
 };
 
-const replaceDots = (filename) => filename.replace(/\./gu, replacement);
+const replaceDots = (filename) => filename.replace(/\./gu, ' ');
 
 const name = (filename) => {
   const cleaned = clean(filename.split(path.sep)[0], { replacement });
@@ -47,8 +47,9 @@ const name = (filename) => {
   const yearRemoved = removeYear(episodeRemoved);
 
   const dotsReplaced = replaceDots(yearRemoved);
-  const trimmed = trimSpecialChars(dotsReplaced, replacement).trim();
-  return trimmed.split(`${replacement}${replacement}`)[0] || TITLE_UNKNOWN;
+  const trimmed = trimSpecialChars(dotsReplaced, '');
+
+  return trimmed.split(`${replacement}`)[0].trim() || TITLE_UNKNOWN;
 };
 
 export {

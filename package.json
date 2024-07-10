@@ -1,21 +1,35 @@
 {
   "name": "media-filename-parser",
-  "version": "0.2.2",
+  "version": "0.2.7",
   "type": "module",
   "main": "./dist/index.bundle.js",
   "exports": {
     ".": "./dist/index.bundle.js"
   },
+  "files": [
+    "./dist/index.bundle.js"
+  ],
   "description": "Extract information from media filename",
-  "git": "https://github.com/eamanola/media-filename-parser.git",
-  "author": "",
+  "author": "Ehsun Amanolahi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eamanola/media-filename-parser.git"
+  },
+  "keywords": [
+    "media",
+    "filename",
+    "parser"
+  ],
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eamanola/media-filename-parser/issues"
+  },
+  "homepage": "https://github.com/eamanola/media-filename-parser#readme",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
     "prepare": "husky install",
     "build": "webpack",
-    "bump-patch": "bump-pkg-json PATCH && npm install --package-lock-only --ignore-scripts",
     "publish-package": "npm run build && npm publish --access public"
   },
   "devDependencies": {

@@ -67,43 +67,10 @@ const wildGuess = (filenamePart) => {
   return EPISODE_UNKNOWN;
 };
 
-const pureExtra = (filenamePart) => {
-  const re = /^(?<type>ncop|nced|extra|oad)$/iu;
-
-  const matched = matchReg(filenamePart, re);
-
-  if (matched) {
-    const value = 0;
-    const version = null;
-    const isWildGuess = false;
-    const extra = /ncop|nced|extra|oad/ui.test(matched.groups.type)
-      ? matched.groups.type.toLowerCase()
-      : null;
-
-    return {
-      episodeInfo: {
-        episode: value,
-        extra,
-        isWildGuess,
-        version,
-      },
-      matched,
-    };
-  }
-
-  return EPISODE_UNKNOWN;
-};
-
 const match = (filenamePart) => {
   const explicitMatch = explicit(filenamePart);
   if (explicitMatch !== EPISODE_UNKNOWN) {
     const { matched, episodeInfo } = explicitMatch;
-    return { episodeInfo, match: matched };
-  }
-
-  const pureExtraMatch = pureExtra(filenamePart);
-  if (pureExtraMatch !== EPISODE_UNKNOWN) {
-    const { matched, episodeInfo } = pureExtraMatch;
     return { episodeInfo, match: matched };
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "media-filename-parser",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "type": "module",
   "main": "./dist/index.bundle.js",
   "exports": {

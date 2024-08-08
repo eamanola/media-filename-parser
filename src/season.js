@@ -2,7 +2,7 @@ import path from 'node:path';
 
 const SEASON_UNKNOWN = null;
 
-const re = /(?:^|[\s([.])(?:season|s)\s*(?<season>\d+)/iu;
+const re = /(?:season|s)\s*(?<season>\d+)/iu;
 
 const match = (filenamePart) => filenamePart.match(re);
 

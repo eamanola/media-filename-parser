@@ -1,6 +1,6 @@
 {
   "name": "media-filename-parser",
-  "version": "0.2.9",
+  "version": "0.2.12",
   "type": "module",
   "main": "./dist/index.bundle.js",
   "exports": {
@@ -30,7 +30,7 @@
     "lint": "eslint .",
     "prepare": "husky install",
     "build": "webpack",
-    "publish-package": "npm run build && npm publish --access public"
+    "prepack": "npm run build"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.23.3",

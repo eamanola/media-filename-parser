@@ -14,7 +14,7 @@ const explicitNaming = (filenamePart) => {
 };
 
 const implicitNaming = (filenamePart) => {
-  const re = /(?:^|\s)(?<episode>\d{1,4})(?:\s*v\s*(?<version>\d+))?(?:[^\dA-Za-z]|$)/iu;
+  const re = /(?:^|[^\dA-Za-z])(?<episode>\d{1,4})(?:\s*v\s*(?<version>\d+))?(?:[^\dA-Za-z]|$)/iu;
 
   return matchReg(replacePart(filenamePart, ''), re);
 };

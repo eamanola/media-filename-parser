@@ -2,6 +2,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 // const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+const { join } = require('node:path');
 
 const entry = {
   index: ['./src/index.js'],
@@ -10,7 +11,7 @@ const entry = {
 const output = {
   filename: 'index.bundle.js',
   library: { type: 'module' },
-  path: `${__dirname}/dist`,
+  path: join(__dirname, 'dist'),
 };
 
 const aModule = {
@@ -40,7 +41,6 @@ const plugins = [
   }),
   new NodePolyfillPlugin({ onlyAliases: ['path'] }),
 ];
-
 
 const optimization = { minimizer: [new TerserPlugin()] };
 

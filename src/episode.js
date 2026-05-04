@@ -71,6 +71,7 @@ const match = (filenamePart) => {
   const explicitMatch = explicit(filenamePart);
   if (explicitMatch !== EPISODE_UNKNOWN) {
     const { matched, episodeInfo } = explicitMatch;
+
     return { episodeInfo, match: matched };
   }
 
@@ -78,6 +79,7 @@ const match = (filenamePart) => {
   const wildGuessMatch = wildGuess(filenamePart);
   if (wildGuessMatch !== EPISODE_UNKNOWN) {
     const { matched, episodeInfo } = wildGuessMatch;
+
     return { episodeInfo, match: matched };
   }
 

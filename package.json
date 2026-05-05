@@ -1,6 +1,6 @@
 {
   "name": "media-filename-parser",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "type": "module",
   "main": "./dist/index.bundle.js",
   "exports": {
@@ -43,7 +43,7 @@
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "jest": "^30.3.0",
-    "node-polyfill-webpack-plugin": "^4.1.0",
+    "path-browserify": "^1.0.1",
     "terser-webpack-plugin": "^5.5.0",
     "webpack": "^5.106.2",
     "webpack-cli": "^7.0.2"

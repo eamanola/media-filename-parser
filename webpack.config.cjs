@@ -1,7 +1,6 @@
 const TerserPlugin = require('terser-webpack-plugin');
 // const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const { join } = require('node:path');
 
 const entry = {
@@ -39,12 +38,15 @@ const plugins = [
         throw new Error(`${resource.request} not mapped in webpack.config`);
     }
   }),
-  new NodePolyfillPlugin({ onlyAliases: ['path'] }),
 ];
 
 const optimization = { minimizer: [new TerserPlugin()] };
 
-const resolve = {};
+const resolve = {
+  fallback: {
+    path: require.resolve('path-browserify'),
+  },
+};
 
 const experiments = { outputModule: true };
 

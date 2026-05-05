@@ -9,30 +9,43 @@ export default airbnb(
     ignores: ['dist/*'],
   },
   {
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-        ...globals.node,
-      },
-    },
     rules: {
       'import/extensions': ['off'],
+      'import/no-extraneous-dependencies': [
+        'error',
+        {
+          devDependencies: [
+            'eslint.config.js',
+            'webpack.config.cjs',
+            '**/*.test.js',
+          ],
+        },
+      ],
       'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
       'prefer-named-capture-group': ['error'],
       'require-unicode-regexp': ['error'],
       'sort-keys': ['error'],
     },
   },
+  // {
+  //   languageOptions: {
+  //     // globals: {
+  //     //   ...globals.node,
+  //     // },
+  //   },
+  // },
   {
-    files: ['*.cjs'],
-    rules: {
-      'import/no-commonjs': ['off'],
+    files: ['**/*.test.js', 'jest/**'],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
     },
   },
   {
-    files: ['webpack.config.cjs'],
+    files: ['**/*.cjs'],
     rules: {
-      'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+      'import/no-commonjs': ['off'],
     },
   },
 );

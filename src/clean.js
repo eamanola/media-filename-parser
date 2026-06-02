@@ -1,5 +1,5 @@
 const replaceExtension = (filename, replacement) => filename
-  .replace(/\.(?:mkv|mp4|avi|m4v|srt|ass)$/u, replacement);
+  .replace(/\.(?:mkv|mp4|avi|m4v|srt|ass|webm)$/u, replacement);
 
 const replaceTags = (filename, replacement) => filename
   .replace(/\[[^\]]+\]/giu, replacement);

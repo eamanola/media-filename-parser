@@ -1,7 +1,7 @@
-import title, { TITLE_UNKNOWN } from './title.js';
-import year, { YEAR_UNKNOWN } from './year.js';
-import season, { SEASON_UNKNOWN } from './season.js';
-import episode, { EPISODE_UNKNOWN } from './episode.js';
+import title, { TITLE_UNKNOWN } from './title';
+import year, { YEAR_UNKNOWN } from './year';
+import season, { SEASON_UNKNOWN } from './season';
+import episode, { EPISODE_UNKNOWN } from './episode';
 
 export {
   title,

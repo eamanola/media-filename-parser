@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+
 import season from './season';
 
 describe('season', () => {

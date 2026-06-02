@@ -1,6 +1,7 @@
 const YEAR_UNKNOWN = null;
 
-const MIN_YEAR = 1900; // line between wild guesses and years
+// line between wild guesses and years
+const MIN_YEAR = 1900;
 
 const re = /(?:^|[\s([.])(?<year>\d{4})(?:[\s)\].]|$)/iu;
 

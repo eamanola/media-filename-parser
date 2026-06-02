@@ -1,7 +1,7 @@
-import path from 'node:path';
+import path from 'path-browserify';
 
-import clean, { replacePart } from './clean.js';
-import { MIN_YEAR } from './year.js';
+import clean, { replacePart } from './clean';
+import { MIN_YEAR } from './year';
 
 const EPISODE_UNKNOWN = null;
 

@@ -1,4 +1,4 @@
-npm test
-npm run lint
-npx bump-pkg-json PATCH && npm install --package-lock-only --ignore-scripts
-git add package.json package-lock.json
+pnpm test
+pnpm run lint
+pnpx bump-pkg-json PATCH
+git add package.json

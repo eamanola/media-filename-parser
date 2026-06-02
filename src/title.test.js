@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+
 import title from './title';
 
 describe('title', () => {

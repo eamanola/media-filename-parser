@@ -1,8 +1,9 @@
-import path from 'node:path';
-import clean, { trimSpecialChars } from './clean.js';
-import { match as matchSeason } from './season.js';
-import { match as matchEpisode } from './episode.js';
-import { match as matchYear } from './year.js';
+import path from 'path-browserify';
+
+import clean, { trimSpecialChars } from './clean';
+import { match as matchSeason } from './season';
+import { match as matchEpisode } from './episode';
+import { match as matchYear } from './year';
 
 const TITLE_UNKNOWN = null;
 const replacement = '---';

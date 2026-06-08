@@ -1,13 +1,14 @@
 {
   "name": "media-filename-parser",
-  "version": "0.2.16",
+  "version": "0.2.18",
   "type": "module",
-  "main": "./dist/index.bundle.js",
   "exports": {
-    ".": "./dist/index.bundle.js"
+    "require": "./dist/index.bundle.cjs",
+    "import": "./dist/index.bundle.mjs"
   },
   "files": [
-    "./dist/index.bundle.js"
+    "./dist/index.bundle.cjs",
+    "./dist/index.bundle.mjs"
   ],
   "description": "Extract information from media filename",
   "author": "Ehsun Amanolahi",
@@ -38,14 +39,12 @@
     "@eslint/js": "^10.0.1",
     "bump-pkg-json": "^0.1.3",
     "esbuild": "^0.28.0",
+    "esbuild-plugins-node-modules-polyfill": "^1.8.1",
     "eslint": "^10.4.1",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-stylistic-airbnb": "^3.2.0",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "jest": "^30.3.0"
-  },
-  "dependencies": {
-    "path-browserify": "^1.0.1"
   }
 }

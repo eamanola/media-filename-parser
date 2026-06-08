@@ -1,4 +1,4 @@
-import path from 'path-browserify';
+import path from 'node:path';
 
 import clean, { trimSpecialChars } from './clean';
 import { match as matchSeason } from './season';

@@ -1,4 +1,4 @@
-import path from 'path-browserify';
+import path from 'node:path';
 
 import clean, { replacePart } from './clean';
 import { MIN_YEAR } from './year';

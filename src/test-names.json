@@ -711,11 +711,47 @@
   },
   {
     "filename": "Sousou no Frieren 2nd Season/[DB]Sousou no Frieren 2nd Season_-_03_(Dual Audio_10bit_1080p_x265).mkv",
-    "title": "Sousou no Frieren 2nd Season",
-    "season": null,
+    "title": "Sousou no Frieren",
+    "season": 2,
     "episodeInfo": {
       "episode": 3,
       "isWildGuess": true,
+      "extra": null,
+      "version": null
+    },
+    "year": null
+  },
+  {
+    "filename": "foo 1st Season/e1.mkv",
+    "title": "foo",
+    "season": 1,
+    "episodeInfo": {
+      "episode": 1,
+      "isWildGuess": false,
+      "extra": null,
+      "version": null
+    },
+    "year": null
+  },
+  {
+    "filename": "foo.3rd.season/e1.mkv",
+    "title": "foo",
+    "season": 3,
+    "episodeInfo": {
+      "episode": 1,
+      "isWildGuess": false,
+      "extra": null,
+      "version": null
+    },
+    "year": null
+  },
+  {
+    "filename": "foo.14th.season/e1.mkv",
+    "title": "foo",
+    "season": 14,
+    "episodeInfo": {
+      "episode": 1,
+      "isWildGuess": false,
       "extra": null,
       "version": null
     },

@@ -1,23 +1,42 @@
 # media-filename-parser
-Extracts media information from filename
 
-* Title
+A path parser to extracts, and guess information from media file path.
 
-* Season
+Files names come in all types and forms. Simple `my show/S01E01.mp4` format would work, but many other variations exist, such as `my.show.Season.1.1080.hevc.2026/01.mp4`
 
-* Episode
+Changing all file names can be tedious work.
 
-* Special episodes (nced, ncop, extra, oad)
+There is of cource, the embedded media information, but they are often unreliable, if not out right ads.
 
-* Year
+This library tries to extract the information from the file path, instead of relying on meta data.
 
-Feel free to add your cases to ./src/test-names.json
+## Informatio extracted
+
+### Title
+
+title of the show
+
+### Season
+
+season number
+
+### Episode
+
+- Special episodes information, such as: nced, ncop, extra, oad
+- episode number
+
+### Year
+
+year information
+
+## help wanted
+
+If any information extracted is incorrect, please add a new case to ./src/test-names.json
 
 ## install
 
 ```
-npm i media-filename-parser
-
+(p)npm i media-filename-parser
 ```
 
 ## example use
@@ -34,5 +53,4 @@ const title = getTitle(fileName); // NieR Automata Ver1 1a
 const season = getSeason(fileName); // 1
 const { episode } = getEpisode(fileName); // 1
 ...
-
 ```

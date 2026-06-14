@@ -11,17 +11,21 @@
     "./dist/index.bundle.mjs"
   ],
   "description": "Extract information from media filename",
-  "author": "Ehsun Amanolahi",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eamanola/media-filename-parser.git"
-  },
   "keywords": [
     "media",
     "filename",
     "parser"
   ],
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eamanola/media-filename-parser.git"
+  },
+  "author": {
+    "name": "Ehsun Amanolahi",
+    "email": "ehsun.amanolahi@gmail.com",
+    "url": "https://codeberg.org/eamanola"
+  },
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/eamanola/media-filename-parser/issues"
   },

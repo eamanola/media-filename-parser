@@ -1,3 +1,5 @@
+Moved to [codeberg](https://codeberg.org/eamanola/media-filename-parser)
+
 # media-filename-parser
 
 A path parser to extracts, and guess information from media file path.
